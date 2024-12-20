@@ -10,7 +10,6 @@ A clone of **[Zentry](https://zentry.com/)**
 4. 🤸 [Quick Start](#quick-start)
 5. 🕸️ [Snippets (Code to Copy)](#snippets)
 6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
 
 ## <a name="about">📄 Abount</a>
 
@@ -54,8 +53,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/AchyutPal21/theme_site_react.git
-cd theme_site_react
+git clone https://github.com/AchyutPal21/zentry_clone_repo.git
+cd zentry_clone_repo
 ```
 
 **Installation**
@@ -391,6 +390,23 @@ export default RoundedCorners;
 
 ## <a name="links">🔗 Assets</a>
 
-Assets used in the project can be found [here](https://u.pcloud.link/publink/show?code=kZLOD55ZKES0TSUrjT7CFqEpYzwgXJWPrRak)
+Assets used in the project can be found 👉[here](https://u.pcloud.link/publink/show?code=kZLOD55ZKES0TSUrjT7CFqEpYzwgXJWPrRak), and these in /public dir of the project.
+
+```bash
+project-root/
+│   ├──
+.   .
+.   .
+│   └──
+├── 🌐public/
+│   ├── audio/
+│   ├── fonts/
+│   ├── img/
+│   ├── videos/
+│   └── vite.svg
+.
+.
+└──
 
 > All rights to these assets and fonts belong to their respective owners. If you plan to use this project commercially or publicly, please replace these assets and fonts with ones you own or have permission to use. This project is not affiliated with or endorsed by **[Zentry](https://zentry.com/)**.
+```

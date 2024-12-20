@@ -1,10 +1,11 @@
-function App() {
+import Hero from "./components/Hero";
 
+function App() {
   return (
-    <main>
-      <h1 className="text-5xl text-violate-300 font-bold text-center font-circular-web">Let's Start The DEV!!!</h1>
+    <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <Hero />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
