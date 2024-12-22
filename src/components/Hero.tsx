@@ -1,12 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { IVideoRef } from "../types/components/IVideo.types";
 import Button from "./Button";
 import Video from "./Video";
 
 const TOTAL_VIDEOS = 4;
-const getNextVideo = (index: number) =>
-  `/videos/hero-${index % TOTAL_VIDEOS}.mp4`;
+const getNextVideo = function (index: number) {
+  return `/videos/hero-${index % TOTAL_VIDEOS}.mp4`;
+};
 
 function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,12 +32,29 @@ function Hero() {
     setLoadedVideos((prev) => prev + 1);
   }
 
-  useEffect(() => {
-    if (zoomInVideoRef.current) {
-      zoomInVideoRef.current.autoPlay();
-      zoomInVideoRef.current.muted();
-    }
-  }, []);
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#next-video", { visibility: "visible" });
+        gsap.to("#next-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => nextVideoRef.current && nextVideoRef.current.play(),
+        });
+        gsap.from("#current-video", {
+          transformOrigin: "center center",
+          scale: 0,
+          duration: 1.5,
+          ease: "power1.inOut",
+        });
+      }
+    },
+    { dependencies: [currentIndex], revertOnUpdate: true }
+  );
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">

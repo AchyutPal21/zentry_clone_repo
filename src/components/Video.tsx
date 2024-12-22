@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react";
 import { IVideoProps, IVideoRef } from "../types/components/IVideo.types";
 
 const Video = forwardRef<IVideoRef, IVideoProps>(function (
-  { videoSrc, videoId, styleClasses, onVideoLoaded, ...restprops },
+  { videoSrc, videoId, styleClasses, onVideoLoaded, restprops },
   ref
 ) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,6 +33,7 @@ const Video = forwardRef<IVideoRef, IVideoProps>(function (
       if (videoRef.current) {
         videoRef.current
           .play()
+          .then(() => console.log("video is playing!!!"))
           .catch((error) =>
             console.error(`Error while playing video ${error}`)
           );
@@ -58,6 +59,3 @@ const Video = forwardRef<IVideoRef, IVideoProps>(function (
 });
 
 export default Video;
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}
