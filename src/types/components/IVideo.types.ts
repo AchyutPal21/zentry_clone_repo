@@ -3,7 +3,7 @@ export interface IVideoProps {
   videoId: string;
   styleClasses: string;
   onVideoLoaded?: () => void;
-  restprops?: React.ComponentProps<"video">;
+  restprops?: React.ComponentProps<"video"> | undefined;
 }
 
 export interface IVideoRef {

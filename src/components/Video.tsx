@@ -53,7 +53,7 @@ const Video = forwardRef<IVideoRef, IVideoProps>(function (
       id={videoId}
       className={styleClasses}
       onLoadedData={onVideoLoaded}
-      {...restprops}
+      {...(restprops || {})}
     />
   );
 });
