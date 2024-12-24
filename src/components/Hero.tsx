@@ -19,7 +19,7 @@ function Hero() {
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
-  const [userInteraction, setUserInteraction] = useState(false);
+  // const [userInteraction, setUserInteraction] = useState(false);
 
   const currentVideoRef = useRef<IVideoRef>(null);
   const nextVideoRef = useRef<IVideoRef>(null);
@@ -40,7 +40,6 @@ function Hero() {
     if (loadedVideos + 1 === TOTAL_VIDEOS) {
       setIsLoading(false);
     }
-    console.log("useEffect() called.......");
   }, [loadedVideos]);
 
   useGSAP(

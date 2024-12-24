@@ -33,7 +33,6 @@ const Video = forwardRef<IVideoRef, IVideoProps>(function (
       if (videoRef.current) {
         videoRef.current
           .play()
-          .then(() => console.log("video is playing!!!"))
           .catch((error) =>
             console.error(`Error while playing video ${error}`)
           );
